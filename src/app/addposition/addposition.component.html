@@ -1,0 +1,44 @@
+<div class="content addForm">
+
+
+
+
+    <form class="example-form">
+
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <div class="cell">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose product</mat-label>
+                <mat-select #select required>
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let product of products" [value]="product.id"
+                        [disabled]="product.stashQuantity<=0">
+                        {{product.manufacturer}} {{product.model}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+
+        <div class="cell">
+            <mat-form-field class="example-full-width">
+                <input #quantity matInput type="number" placeholder="Quantity">
+            </mat-form-field>
+        </div>
+
+
+        <div class="cell addButton" (click)="addPosition(select.value,quantity.value)">
+            <a>Add Position</a>
+
+        </div>
+
+
+
+    </form>
+
+</div>

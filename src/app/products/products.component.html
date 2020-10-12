@@ -1,0 +1,64 @@
+<div id="content">
+
+  <div class="addForm">
+    
+    <div class="cell addButton" routerLink="/addProduct">
+      <a>Add Product</a>
+    </div>
+    
+  </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="manufacturer">
+          <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+          <td mat-cell *matCellDef="let element"> {{element.manufacturer}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="model">
+          <th mat-header-cell *matHeaderCellDef> Model </th>
+          <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+        </ng-container>
+        
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="stashQuantity">
+          <th mat-header-cell *matHeaderCellDef> Stash Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.stashQuantity}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef class="first"> Edit </th>
+            <td mat-cell c *matCellDef="let element" class="first button" routerLink="/editProduct/{{element.id}}">Edit</td>
+          </ng-container>
+
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class="sec"> Delete </th>
+            <td mat-cell *matCellDef="let element" class="sec button" routerLink="/products" (click)="deleteProduct(element.id)">Delete</td>
+          </ng-container>
+        
+      
+        <tr mat-header-row id="headerrow" *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+     
+    </div>
+               
+    

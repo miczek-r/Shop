@@ -1,0 +1,51 @@
+$primary:#E8E9F3;
+$sec:#272635;
+$a:#CECECE;
+$b:#A6A6A8;
+$c:#B1E5F2;
+
+nav{
+    background-color: $sec;
+    color:$primary;
+    position:sticky;
+    top:0;
+}
+
+ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    
+    width:80%;
+  }
+  
+  li {
+    float: left;
+    display: flex;
+    input{
+        background-color: lighten($color: $sec, $amount: 10);
+        border:none;
+        font-size: larger;
+        color:white;
+        width:60px;
+        text-align: center;
+    }
+  }
+
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    &:hover{
+        background-color:darken($color: $sec, $amount: 10);
+    }
+    cursor: pointer;
+  }
+body{
+    margin:0;
+    width:100%;
+}

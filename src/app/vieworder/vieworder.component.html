@@ -1,0 +1,46 @@
+<app-addposition></app-addposition>
+<div class="content">
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="product">
+          <th mat-header-cell *matHeaderCellDef> Product </th>
+          <td mat-cell *matCellDef="let element"> {{element.product.manufacturer}} {{element.product.model}}</td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ppu">
+          <th mat-header-cell *matHeaderCellDef> Price/Unit </th>
+          <td mat-cell class="actions" *matCellDef="let element">{{element.product.price}}</td>
+        </ng-container>
+      
+    
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell class="actions" *matCellDef="let element">{{element.product.price * element.quantity}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class="first"> Delete </th>
+            <td mat-cell class="delete first button" *matCellDef="let element" (click)="deletePosition(element.id)">Delete</td>
+          </ng-container>
+        
+      
+        <tr mat-header-row id="headerrow" *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+     
+    </div>
+    
+    

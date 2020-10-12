@@ -1,0 +1,19 @@
+<br>
+<div id='formularz'>
+    <form>
+        <mat-form-field>
+            <input #manufacturer matInput placeholder="Manufacturer" name='manufacturer'>
+        </mat-form-field>
+        <mat-form-field>
+            <input #model matInput placeholder="Model" name='model'>
+        </mat-form-field>
+        <mat-form-field>
+            <input #price matInput placeholder="Price" name='price'>
+        </mat-form-field>
+        <mat-form-field>
+            <input #stashQuantity matInput placeholder="Stash Quantity" name='stashQuantity'>
+        </mat-form-field>
+    </form>
+    <button mat-flat-button color='primary' (click)="addProduct(manufacturer.value,model.value,price.value,stashQuantity.value)">Add</button>
+    <button mat-flat-button color='accent' routerLink='/products' id='wroc'>Back</button>
+</div>

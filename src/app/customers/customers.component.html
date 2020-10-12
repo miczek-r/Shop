@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="addForm">
+    
+    <div class="cell addButton" routerLink="/addCustomer">
+      <a>Add Customer</a>
+    </div>
+    
+  </div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+    
+  
+    <!-- Weight Column 
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>-->
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="orders">
+        <th mat-header-cell *matHeaderCellDef class="first"> Orders </th>
+        <td mat-cell class="orders first button" *matCellDef="let element" routerLink="/orders/{{element.id}}"> Orders</td>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef class="sec"> Edit </th>
+        <td mat-cell class="edit sec button" *matCellDef="let element" routerLink="/editCustomer/{{element.id}}">Edit</td>
+      </ng-container>
+      <ng-container matColumnDef="delete" class="third">
+        <th mat-header-cell *matHeaderCellDef class="third"> Delete </th>
+        <td mat-cell class="delete third button" *matCellDef="let element" (click)="deleteCustomer(element.id)">Delete</td>
+      </ng-container>
+  
+    <tr mat-header-row id="headerrow" *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+ 
+</div>
+  		 

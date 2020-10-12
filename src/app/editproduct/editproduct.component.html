@@ -1,0 +1,19 @@
+<br>
+<div id='formularz'>
+    <form>
+        <mat-form-field>
+            <input #manufacturer matInput placeholder="Manufacturer" name='manufacturer' value={{dataSource.manufacturer}}>
+        </mat-form-field>
+        <mat-form-field>
+            <input #model matInput placeholder="Model" name='model' value={{dataSource.model}}>
+        </mat-form-field>
+        <mat-form-field>
+            <input #price matInput placeholder="Price" name='price' value={{dataSource.price}}>
+        </mat-form-field>
+        <mat-form-field>
+            <input #stashQuantity matInput placeholder="Stash Quantity" name='stashQuantity' value={{dataSource.stashQuantity}}>
+        </mat-form-field>
+    </form>
+    <button mat-flat-button color='primary' (click)="editProduct(manufacturer.value,model.value,price.value,stashQuantity.value)">Add</button>
+    <button mat-flat-button color='accent' routerLink='/products' id='wroc'>Back</button>
+</div>

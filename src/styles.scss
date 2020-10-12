@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+$primary:#E8E9F3;
+$sec:#272635;
+$a:#CECECE;
+$b:#A6A6A8;
+$c:darken($color: #A6A6A8, $amount: 8);
+
+html, body { height: 100%; }
+body {margin:0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color:$primary; }
+table{background-color: $primary;}
+.content{
+    width:80%;
+    margin:auto;
+}
+
+.addForm {
+    height: 50px;
+    border-bottom: solid $sec 2px;
+    border-top: solid $primary 2px;
+    
+    
+    *.input {
+        height: 100%;
+    }
+    
+}
+.cell{
+    width: 31%;
+    float: left;
+    height: 50px;
+    display: flex;
+}
+.addButton{
+    float: right;
+    align-items: center;
+    background-color: $sec;
+    padding-left: 5.5%;
+    font-size: larger;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        background-color: darken($color: $sec, $amount: 10);
+    }
+    width:19%;
+}
+.mat-row:hover {
+    .first{background-color: darken($color: $a, $amount: 10);}
+    .sec{background-color: darken($color: $b, $amount: 10);}
+    .third{background-color: darken($color: $c, $amount: 10);}
+    background-color: darken($color: white, $amount: 10);
+  }
+
+.first{
+    background-color: $a;
+    text-align:center !important;
+    
+}
+.sec{
+    background-color: $b;
+    text-align:center !important;
+}
+.third{
+    background-color: $c;
+    text-align:center !important;
+}
+
+.button{
+    cursor: pointer;
+}
+
+th{
+    background-color: white;
+}

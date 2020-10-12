@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+#content {
+    width: 80%;
+    margin: auto;
+}
+th {
+    position: sticky;
+    top: 48px; /* 0px if you don't have a navbar, but something is required */
+    
+}
+.orders {
+    a {
+        width: 50%;
+    }
+}

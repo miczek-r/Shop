@@ -1,0 +1,15 @@
+<br><div id='formularz'>
+    <form>
+        <mat-form-field>
+            <input #firstName matInput placeholder="First Name" name='firstName' value={{dataSource.firstName}}>
+        </mat-form-field>
+        <mat-form-field>
+            <input #lastName matInput placeholder="Last Name" name='lastName' value={{dataSource.lastName}}>
+        </mat-form-field>
+        <mat-form-field>
+            <input #email matInput placeholder="Email" name='email' type="email" value={{dataSource.email}}>
+        </mat-form-field>
+    </form>
+    <button mat-flat-button color='primary' (click)="editCustomer(firstName.value,lastName.value,email.value)">Edit</button>
+    <button mat-flat-button color='accent' routerLink='' id='wroc'>Back</button>
+</div>

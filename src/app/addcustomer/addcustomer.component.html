@@ -1,0 +1,18 @@
+<div class="content">
+    <br>
+    <div id='formularz'>
+        <form>
+            <mat-form-field>
+                <input #name matInput placeholder="Name" name='name'>
+            </mat-form-field>
+            <mat-form-field>
+                <input #surname matInput placeholder="Surname" name='surname'>
+            </mat-form-field>
+            <mat-form-field>
+                <input #email matInput placeholder="Email" name='email' type="email">
+            </mat-form-field>
+        </form>
+        <button mat-flat-button color='primary' (click)="addCustomer(name.value,surname.value,email.value)">Add</button>
+        <button mat-flat-button color='accent' routerLink='' id='wroc'>Back</button>
+    </div>
+</div>
